@@ -9,7 +9,7 @@ or run locally. <br>
 ### Steps
 clone repo
 <pre>
-git clone https://github.com/fadhlakmal/image-classification-app.git
+git clone https://github.com/fadhlakmal/image-identification-app.git
 cd image-identification-app
 </pre>
 install dependencies
