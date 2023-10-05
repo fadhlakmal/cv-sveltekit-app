@@ -25,5 +25,6 @@ npm run dev -- --open
 SvelteKit <br>
 https://kit.svelte.dev/
 
-MobileNet <br>
+Models <br>
 https://www.npmjs.com/package/@tensorflow-models/mobilenet
+https://www.npmjs.com/package/@tensorflow-models/coco-ssd
