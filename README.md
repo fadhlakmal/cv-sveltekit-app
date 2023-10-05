@@ -26,5 +26,5 @@ SvelteKit <br>
 https://kit.svelte.dev/
 
 Models <br>
-https://www.npmjs.com/package/@tensorflow-models/mobilenet
+https://www.npmjs.com/package/@tensorflow-models/mobilenet <br>
 https://www.npmjs.com/package/@tensorflow-models/coco-ssd
