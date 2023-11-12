@@ -8,7 +8,7 @@ This web application integrates computer vision using TensorFlow.js within the S
 
 ## Demo
 
-Explore the live demo: [Computer Vision in SvelteKit](https://tfjs-sveltekit.vercel.app/)
+Explore the live demo: [Computer Vision in SvelteKit](https://cv-sveltekit-app.vercel.app/)
 
 ![Screenshot 2023-10-05 204008](https://github.com/fadhlakmal/tfjs-sveltekit-app/assets/120249194/50133cfb-5418-41b5-8afb-84c90ecc7e33)
 ![Screenshot 2023-10-05 204203](https://github.com/fadhlakmal/tfjs-sveltekit-app/assets/120249194/f69fac84-ad54-415a-8e62-8a75900061cc)
