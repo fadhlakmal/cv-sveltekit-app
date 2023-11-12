@@ -1,6 +1,7 @@
 <div class="link-holder">
     <a href="/imageclassification">image classification</a>
     <a href="/objectdetection">object detection</a>
+	<a href="/toxiccommentdetection">toxic comment detection</a>
 </div>
 
 <style>
