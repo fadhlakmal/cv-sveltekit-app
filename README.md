@@ -13,15 +13,15 @@ Explore the live demo: [Computer Vision in SvelteKit](https://cv-sveltekit-app.v
 ![Screenshot 2023-10-05 204008](https://github.com/fadhlakmal/tfjs-sveltekit-app/assets/120249194/50133cfb-5418-41b5-8afb-84c90ecc7e33)
 ![Screenshot 2023-10-05 204203](https://github.com/fadhlakmal/tfjs-sveltekit-app/assets/120249194/f69fac84-ad54-415a-8e62-8a75900061cc)
 
-## Technologies Used
+## Tools Used
 
-- **SvelteKit:** A framework providing a fast and efficient development environment for modern web applications.
+- **SvelteKit**
 
-- **TensorFlow.js:** Empowering machine learning capabilities directly within web browsers.
+- **TensorFlow.js**
 
-- **MobileNet:** The [MobileNet](https://www.npmjs.com/package/@tensorflow-models/mobilenet) model excels at real-time image classification.
+- **MobileNet**
 
-- **COCO-SSD:** For real-time object detection, the [COCO-SSD](https://www.npmjs.com/package/@tensorflow-models/coco-ssd) model identifies various objects within images and video streams.
+- **COCO-SSD**
 
 ## Getting Started
 
