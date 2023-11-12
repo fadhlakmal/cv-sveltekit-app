@@ -3,7 +3,6 @@
 
 	import { onMount } from 'svelte';
 
-	let tf;
 	let toxicity;
 	let model;
 	let predictHistory = [];
@@ -20,7 +19,6 @@
 	];
 
 	onMount(async () => {
-		tf = await import('@tensorflow/tfjs');
 		toxicity = await import('@tensorflow-models/toxicity');
 		model = await toxicity.load(threshold, labels);
 	});
