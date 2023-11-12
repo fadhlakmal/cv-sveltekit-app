@@ -1,4 +1,4 @@
-# Computer Vision in SvelteKit
+# Computer Vision App
 
 This web application integrates computer vision using TensorFlow.js into the SvelteKit framework. The project showcases two machine learning features: **Image Classification** and **Real-Time Object Detection**.
 
