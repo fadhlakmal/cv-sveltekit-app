@@ -33,7 +33,7 @@ Check out the live demo: [TensorFlow.js in SvelteKit](https://tfjs-sveltekit.ver
    cd tfjs-sveltekit-app
    npm install
    ```
-2. **Run and Explore the App:** Start the SvelteKit development server and run the app locally:
+2. **Run and Explore the App:** Start the SvelteKit development server to run the app locally:
    ```bash
    npm run dev -- --open
    ```
