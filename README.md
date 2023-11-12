@@ -29,7 +29,7 @@ Explore the live demo: [Computer Vision in SvelteKit](https://cv-sveltekit-app.v
 
    ```bash
    git clone https://github.com/fadhlakmal/tfjs-sveltekit-app.git
-   cd tfjs-sveltekit-app
+   cd cv-sveltekit-app
    npm install
 
    ```
