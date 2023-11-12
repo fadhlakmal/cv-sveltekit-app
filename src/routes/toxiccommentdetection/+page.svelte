@@ -2,8 +2,8 @@
 	// @ts-nocheck
 
 	import { onMount } from 'svelte';
-	import * as tf from '@tensorflow/tfjs';
 
+	let tf;
 	let toxicity;
 	let model;
 	let predictHistory = [];
@@ -20,7 +20,7 @@
 	];
 
 	onMount(async () => {
-		await tf.setBackend('cpu');
+		tf = await import('@tensorflow/tfjs');
 		toxicity = await import('@tensorflow-models/toxicity');
 		model = await toxicity.load(threshold, labels);
 	});
@@ -51,7 +51,7 @@
 	<h2>Predictions</h2>
 	<table border="1" class="predictions-table">
 		<tr>
-			<th>sentence</th>
+            <th>sentence</th>
 			{#each labels as label}
 				<th>{label}</th>
 			{/each}
@@ -70,20 +70,20 @@
 </main>
 
 <style>
-	main {
-		text-align: center;
+    main {
+        text-align: center;
 		font-family: 'Poppins', sans-serif;
 		margin: 0 auto;
 		padding: 20px;
 		max-width: 600px;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-	}
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-	a {
-		font-family: 'Poppins', sans-serif;
+    a {
+        font-family: 'Poppins', sans-serif;
 		background-color: #007bff;
 		color: white;
 		border: none;
@@ -94,44 +94,44 @@
 		margin: 0px;
 	}
 
-	button {
+    button {
 		background-color: #007bff;
 		color: white;
 		border: none;
 		padding: 10px 20px;
 		cursor: pointer;
-		width: fit-content;
+        width: fit-content;
 	}
 
-	form {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		text-align: center;
-		margin-bottom: 50px;
-	}
+    form {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 50px;
+    }
 
-	input {
-		height: 30px;
-		margin: 10px;
-		width: 600px;
-		padding-left: 10px;
-	}
+    input {
+        height: 30px;
+        margin: 10px;
+        width: 600px;
+        padding-left: 10px;
+    }
 
-	.predictions-table {
-		border-collapse: collapse;
-		width: 100%;
-	}
+    .predictions-table {
+        border-collapse: collapse;
+        width: 100%;
+    }
 
-	th,
-	td {
-		border: 1px solid #ddd;
-		padding: 8px;
-		text-align: left;
-	}
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
 
-	th {
-		background-color: #007bff;
-		color: white;
-	}
+    th {
+        background-color: #007bff;
+        color: white;
+    }
+
 </style>
