@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-<div class="link-holder">
-    <a href="/imageclassification">image classification</a>
-    <a href="/objectdetection">object detection</a>
-</div>
-=======
 <script>
 	import { onMount } from 'svelte';
 	import * as tf from '@tensorflow/tfjs';
@@ -61,88 +55,102 @@
 	});
 </script>
 
-{#if isLoadingModel}
-	<h2 class="loadingModel">Loading Model...</h2>
-{:else}
-	<div class="App">
-		<h1 class="header">Image Identification</h1>
 
-		<div class="inputHolder">
-			<input
-				type="file"
-				accept="image/*"
-				capture="camera"
-				class="uploadInput"
-				on:change={uploadImage}
-				bind:this={fileInput}
-			/>
-			<button class="uploadImage" on:click={triggerFileUpload}>Upload Image</button>
-			<br />
-			<span>or</span>
-			<br />
-			<input
-				type="text"
-				placeholder="Paste image URL"
-				bind:this={urlInput}
-				on:change={handleUrlChange}
-			/>
-		</div>
+<a href="/">back</a>
+<div class="App">
+	<h1 class="header">Image Identification</h1>
+	{#if isLoadingModel}
+		<p class="loadingModel">Loading Model</p>
+	{:else}
+		<p class="loadingModel">Model Loaded</p>
+	{/if}
+	<div class="inputHolder">
+		<input
+			type="file"
+			accept="image/*"
+			capture="camera"
+			class="uploadInput"
+			on:change={uploadImage}
+			bind:this={fileInput}
+		/>
+		<button class="uploadImage" on:click={triggerFileUpload}>Upload Image</button>
+		
+		<br />
+		<span>or</span>
+		<br />
+		<input
+			type="text"
+			placeholder="Paste image URL"
+			bind:this={urlInput}
+			on:change={handleUrlChange}
+		/>
+	</div>
 
-		<div class="mainWrapper">
-			<div class="mainContent">
-				<div class="imageHolder">
-					{#if imageUrl}
-						<img
-							src={imageUrl}
-							alt="Upload Preview"
-							crossOrigin="anonymous"
-							bind:this={imageElement}
-						/>
-					{/if}
-				</div>
-				{#if identificationResults.length > 0}
-					<div class="resultsHolder">
-						{#each identificationResults as result, index}
-							<div class="result" key={result.className}>
-								<span class="name">{result.className}</span>
-								<span class="confidence">
-									Confidence level: {(result.probability * 100).toFixed(2)}% {#if index === 0}
-										<span class="bestGuess"> Best Guess</span>
-									{/if}
-								</span>
-							</div>
-						{/each}
-					</div>
+	<div class="mainWrapper">
+		<div class="mainContent">
+			<div class="imageHolder">
+				{#if imageUrl}
+					<img
+						src={imageUrl}
+						alt="Upload Preview"
+						crossOrigin="anonymous"
+						bind:this={imageElement}
+					/>
 				{/if}
 			</div>
-
-			{#if imageUrl}
-				<button class="button" on:click={identifyImage}>Identify Image</button>
-			{/if}
-		</div>
-
-		{#if imageHistory.length > 0}
-			<div class="recentPredictions">
-				<h2>Recent Images</h2>
-				<div class="recentImages">
-					{#each imageHistory as image, index}
-						<div class="recentPrediction" key={`${image}${index}`}>
-							<img src={image} alt="Recent Prediction" on:click={() => (imageUrl = image)} />
+			{#if identificationResults.length > 0}
+				<div class="resultsHolder">
+					{#each identificationResults as result, index}
+						<div class="result" key={result.className}>
+							<span class="name">{result.className}</span>
+							<span class="confidence">
+								Confidence level: {(result.probability * 100).toFixed(2)}% {#if index === 0}
+									<span class="bestGuess"> Best Guess</span>
+								{/if}
+							</span>
 						</div>
 					{/each}
 				</div>
-			</div>
+			{/if}
+		</div>
+
+		{#if imageUrl}
+			<button class="button" on:click={identifyImage}>Identify Image</button>
 		{/if}
 	</div>
-{/if}
->>>>>>> parent of 4fe6326 (added navigation screen and object detection)
+
+	{#if imageHistory.length > 0}
+		<div class="recentPredictions">
+			<h2>Recent Images</h2>
+			<div class="recentImages">
+				{#each imageHistory as image, index}
+					<div class="recentPrediction" key={`${image}${index}`}>
+						<img src={image} alt="Recent Prediction" on:click={() => (imageUrl = image)} />
+					</div>
+				{/each}
+			</div>
+		</div>
+	{/if}
+</div>
 
 <style>
+	a {
+        font-family: 'Poppins', sans-serif;
+		background-color: #007bff;
+		color: white;
+		border: none;
+		padding: 10px 20px;
+		cursor: pointer;
+		text-decoration: none;
+		display: inline-block;
+		margin: 0px;
+	}
+
 	.loadingModel {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 100vh;
+		font-family: 'Poppins', sans-serif;
 	}
 
 	.App {
@@ -171,10 +179,6 @@
 		border: none;
 		padding: 10px 20px;
 		cursor: pointer;
-	}
-
-	.or {
-		margin: 10px 0;
 	}
 
 	.mainWrapper {
